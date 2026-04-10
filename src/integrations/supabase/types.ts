@@ -14,7 +14,114 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      health_metrics: {
+        Row: {
+          body_weight: number | null
+          created_at: string
+          id: string
+          metric_date: string
+          sleep_hours: number | null
+          updated_at: string
+          user_id: string
+          water_intake: number | null
+        }
+        Insert: {
+          body_weight?: number | null
+          created_at?: string
+          id?: string
+          metric_date?: string
+          sleep_hours?: number | null
+          updated_at?: string
+          user_id: string
+          water_intake?: number | null
+        }
+        Update: {
+          body_weight?: number | null
+          created_at?: string
+          id?: string
+          metric_date?: string
+          sleep_hours?: number | null
+          updated_at?: string
+          user_id?: string
+          water_intake?: number | null
+        }
+        Relationships: []
+      }
+      nutrition_logs: {
+        Row: {
+          calories: number
+          carbs: number
+          created_at: string
+          fats: number
+          id: string
+          logged_at: string
+          meal_name: string
+          protein: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          calories?: number
+          carbs?: number
+          created_at?: string
+          fats?: number
+          id?: string
+          logged_at?: string
+          meal_name: string
+          protein?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          calories?: number
+          carbs?: number
+          created_at?: string
+          fats?: number
+          id?: string
+          logged_at?: string
+          meal_name?: string
+          protein?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      workout_logs: {
+        Row: {
+          created_at: string
+          exercise_name: string
+          id: string
+          reps: number
+          sets: number
+          updated_at: string
+          user_id: string
+          weight: number
+          workout_date: string
+        }
+        Insert: {
+          created_at?: string
+          exercise_name: string
+          id?: string
+          reps?: number
+          sets?: number
+          updated_at?: string
+          user_id: string
+          weight?: number
+          workout_date?: string
+        }
+        Update: {
+          created_at?: string
+          exercise_name?: string
+          id?: string
+          reps?: number
+          sets?: number
+          updated_at?: string
+          user_id?: string
+          weight?: number
+          workout_date?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
