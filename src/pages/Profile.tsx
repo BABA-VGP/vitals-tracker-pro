@@ -31,14 +31,21 @@ export default function Profile() {
         </div>
 
         {/* Avatar */}
-        <div className="glass-card p-5 flex items-center gap-4">
-          <div className="h-16 w-16 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
-            <span className="text-xl font-heading font-bold text-primary">AJ</span>
+        <div className="glass-card p-5 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="h-16 w-16 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
+              <span className="text-xl font-heading font-bold text-primary">
+                {user?.email?.charAt(0).toUpperCase() ?? "?"}
+              </span>
+            </div>
+            <div>
+              <h2 className="font-heading font-bold text-foreground text-lg">{user?.email?.split("@")[0] ?? "Athlete"}</h2>
+              <p className="text-xs text-muted-foreground">{user?.email}</p>
+            </div>
           </div>
-          <div>
-            <h2 className="font-heading font-bold text-foreground text-lg">Alex Johnson</h2>
-            <p className="text-xs text-muted-foreground">Training since Jan 2023 · 185 lbs</p>
-          </div>
+          <button onClick={signOut} className="h-9 w-9 rounded-lg bg-muted flex items-center justify-center hover:bg-destructive/20 transition-colors">
+            <LogOut className="h-4 w-4 text-muted-foreground" />
+          </button>
         </div>
 
         {/* Macro Targets */}
