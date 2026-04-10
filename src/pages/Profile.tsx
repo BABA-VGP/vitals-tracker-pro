@@ -9,7 +9,7 @@ interface LiftGoal {
   target: number;
 }
 
-export default function Profile() {
+const { user, signOut } = useAuth();
   const [macros, setMacros] = useState({ protein: 200, carbs: 280, fats: 70 });
   const [lifts, setLifts] = useState<LiftGoal[]>([
     { name: "Squat", current: 315, target: 405 },
