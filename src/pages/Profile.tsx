@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AppLayout } from "@/components/AppLayout";
-import { Target, Trophy } from "lucide-react";
+import { Target, Trophy, LogOut } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface LiftGoal {
   name: string;
